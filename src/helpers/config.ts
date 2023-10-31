@@ -8,7 +8,7 @@ export interface ConfigValues {
   place: string,
   placeCity: string,
   formattedDate: string,
-  email: 'gdg.uberlandia@gmail.com',
+  email: 'gdgbhz@gmail.com',
   organizedBy: systemValue
   midiaKit?: string
   socialMedia?: {
@@ -18,17 +18,17 @@ export interface ConfigValues {
 
 
 const configValues = {
-  name: 'Devfest Triângulo 2023',
-  eventDate: '2023-12-02T08:00:00',
-  eventLinkRegistrationUrl: 'https://doity.com.br/devfesttriangulo',
+  name: 'Devfest BH 2023',
+  eventDate: '2023-11-18T08:00:00',
+  eventLinkRegistrationUrl: 'https://www.sympla.com.br/evento/devfest-bh/2159215?referrer=www.google.com',
   place: '',
-  placeCity: 'Uberlândia - MG',
-  formattedDate: '02 Dezembro',
-  email: 'gdg.uberlandia@gmail.com',
+  placeCity: 'Belo Horizonte - MG',
+  formattedDate: '18 Novembro',
+  email: 'gdgbhz@gmail.com',
   organizedBy: 'gdg', // options
   midiaKit: 'https://docs.google.com/presentation/d/1gPKzG7xZibF3wAbEA050irl2ijhsAMRKXMispSaFrys/edit#slide=id.g223b3f84614_0_31',
   socialMedia: {
-    instagram: 'https://www.instagram.com/devfesttriangulo'
+    instagram: 'https://www.instagram.com/gdg_bh'
   }
 }
 

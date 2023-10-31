@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "export GOOGLE_APPLICATION_CREDENTIALS='serviceAccount.json' && next dev",
     "build": "next build",
     "start": "next start",
     "export": "next export",
@@ -13,6 +13,7 @@
     "deploy_staging": "npm run build_export && firebase use default && npm run deploy",
     "deploy_staging:functions": "firebase use default && npm run deploy:functions",
     "deploy_prod": "npm run build_export && firebase use production && npm run deploy",
+    "deploy_beta": "export GOOGLE_APPLICATION_CREDENTIALS='serviceAccount.json' && npm run build_export && firebase use gdgbh-prod && firebase hosting:channel:deploy beta --expires 1d",
     "lint": "next lint"
   },
   "dependencies": {

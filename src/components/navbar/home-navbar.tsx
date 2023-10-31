@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import {
   Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink,
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
 } from 'reactstrap';
-import { useRouter } from 'next/router'
-import LogoMenu from "../../assets/images/MenuLogo"
+import LogoMenu from "../../assets/images/MenuLogo";
 import styles from "../../styles/Navbar.module.css";
 import Logo from '../logo';
 
@@ -23,7 +23,7 @@ const NavbarHome = () => {
   const menu = [
     { name: "Sobre", ref: "#about" },
     { name: "Palestrantes", ref: '#speakers' },
-    //{ name: "Agenda", ref: '#schedule' },
+    { name: "Agenda", ref: '#schedule' },
     { name: "Patrocinadores", ref: '#sponsors' },
     // { name: "Devdex", ref: 'https://pokedex.devfestcerrado.com.br' }
   ]

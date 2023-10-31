@@ -1,24 +1,28 @@
 /*eslint-disable*/
-import React, { useState } from "react";
+import { useState } from "react";
 
-import styles from './header.module.css'
 import LogoGDG from "assets/images/LogoGDG";
+import configValues from "helpers/config";
 import {
     Collapse,
-    NavbarToggler,
     Nav,
     NavItem,
     NavLink,
+    NavbarToggler,
 } from 'reactstrap';
-import LogoMenu from "../../assets/images/MenuLogo"
-import { CloseMenu } from "../../assets/images/CloseMenu"
-import configValues from "helpers/config";
+import { CloseMenu } from "../../assets/images/CloseMenu";
+import LogoMenu from "../../assets/images/MenuLogo";
+import styles from './header.module.css';
 
 const NAV_ITEMS = [
     {
         name: "O que é o Devfest?",
         ref: "#about",
     },
+    // {
+    //     name: "Agenda",
+    //     ref: "#schedule",
+    // },
     {
         name: "Palestrantes",
         ref: "#speakers",

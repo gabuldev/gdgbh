@@ -1,21 +1,22 @@
-import React, { useEffect } from "react";
-import BaseLayout from "../layouts/base-layout";
-import { Speaker } from "models/speaker";
-import { Schedule } from "models/schedule";
-import { getSponsors } from 'back-features/sponsors';
 import { getSpeaker } from 'back-features/speakers';
+import { getSponsors } from 'back-features/sponsors';
+import { Schedule } from "models/schedule";
+import { Speaker } from "models/speaker";
 import { SponsorLevel } from "models/sponsor-level";
+import { useEffect } from "react";
+import BaseLayout from "../layouts/base-layout";
 
-import styles from "styles/Home.module.css";
-import HomeHeader from "../components/headers/home-header";
+import CountdownTimer from "components/devfest-bh-2023/countdown/countdown-timer";
+import OlderEvenstsSection from "components/devfest-bh-2023/older-events-section/older-events-section";
 import SpeakerSection from "components/speakers-section/speakers-section";
 import SponsorsSection from "components/sponsors-section/sponsors-section";
-import CountdownTimer from "components/devfest-triangulo-2023/countdown/countdown-timer";
-import OlderEvenstsSection from "components/devfest-triangulo-2023/older-events-section/older-events-section";
+import styles from "styles/Home.module.css";
+import HomeHeader from "../components/headers/home-header";
 
 
-import ErrorBoundary from '../components/error-boundary';
+import { getSchedule } from 'back-features/schedule';
 import { HeroSection } from "components/hero-section";
+import ErrorBoundary from '../components/error-boundary';
 
 // https://alvarotrigo.com/blog/css-animations-scroll/
 
@@ -48,11 +49,11 @@ const Home = ({ speakers, sponsors, schedule }: HomePageProps) => {
 
   return (
     <>
-      {/*
-    <section className={styles.Section}>
-          <ScheduleSection speakers={speakers} schedule={schedule} />
-        </section>
-  */}
+
+      {/* <section className={styles.Section}>
+        <ScheduleSection speakers={speakers} schedule={schedule} />
+      </section> */}
+
       <ErrorBoundary>
         <HomeHeader />
 
@@ -82,7 +83,7 @@ export async function getServerSideProps() {
       props: {
         speakers: await getSpeaker(),
         sponsors: await getSponsors(),
-        schedule: [],//await getSchedule(),
+        schedule: await getSchedule(),
       },
     };
   } catch (error) {
