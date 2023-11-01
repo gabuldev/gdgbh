@@ -5,11 +5,11 @@ interface Database extends admin.firestore.Firestore {
 
 let db: Database;
 if (!admin.apps.length) {
-    if (!process.env.FIREBASE_SERVICE_ACCOUNT) {
-        throw new Error('FIREBASE_SERVICE_ACCOUNT is not defined');
+    if (!process.env.FIREBASE_SERVICE_ACCOUNT_GDGBH_PROD) {
+        throw new Error('FIREBASE_SERVICE_ACCOUNT_GDGBH_PROD is not defined');
     }
 
-    const serviceAccountString = Buffer.from(process.env.FIREBASE_SERVICE_ACCOUNT, 'base64').toString()
+    const serviceAccountString = Buffer.from(process.env.FIREBASE_SERVICE_ACCOUNT_GDGBH_PROD, 'base64').toString()
 
     const adminConfig = JSON.parse(serviceAccountString);
     adminConfig.credential = admin.credential.cert(adminConfig);
