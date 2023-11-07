@@ -10,7 +10,6 @@ if (!admin.apps.length) {
     }
 
     const serviceAccountString = Buffer.from(process.env.FIREBASE_SERVICE_ACCOUNT, 'base64').toString()
-
     const adminConfig = JSON.parse(serviceAccountString);
     adminConfig.credential = admin.credential.cert(adminConfig);
     admin.initializeApp(adminConfig);
